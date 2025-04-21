@@ -68,7 +68,7 @@ export class CompletionServices {
     // For example to change the 'Ok' message to something more meaningful.
     responseObj.completionCode = completionCode.code;
     responseObj.completionMessage = completionCode.message;
-    if (request.body.hasOwnProperty("UUID")) {
+    if (request.body?.hasOwnProperty("UUID")) {
       responseObj.UUID = request.body.UUID;
     }
     if (additionalProperties) {
