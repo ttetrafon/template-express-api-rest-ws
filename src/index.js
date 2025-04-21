@@ -1,12 +1,15 @@
 import cors from 'cors';
 import express from 'express';
+import http from 'http';
 
 import dataRoutes from './routes/data.js';
 import indexRoutes from './routes/root.js';
 import { Logger } from './services/Logger.js';
+import { WebSockets } from './services/WebSockets.js';
 
 // Initial setup
 const logger = new Logger();
+const webSockets = new WebSockets();
 
 // Utility to check if this module is the main entry point
 const isMain = () => {
@@ -46,6 +49,8 @@ app.use('/data', dataRoutes);
 // Run the app
 const HOST = '0.0.0.0';
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, HOST, () => {
-  logger.info(`Server running locally on http://${ HOST }:${ PORT }`);
+const server = http.createServer(app);
+webSockets.startWs(server);
+server.listen(PORT, HOST, () => {
+  logger.info(`Server running locally on ${ HOST }:${ PORT }`);
 });
