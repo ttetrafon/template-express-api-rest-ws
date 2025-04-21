@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Template Express App",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/index.js",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "env": {
+        "PORT": "3000",
+        "FILES_DB": "mongodb://template-admin:template-admin-pass@localhost://template-mongodb:27017/?authSource=template-admin",
+        "SQL_HOST": "127.0.0.1",
+        "SQL_PORT": "3306",
+        "SQL_USER": "template-user",
+        "SQL_PASSWORD": "template-user-pass",
+        "SQL_DATABASE": "template-database",
+        "SQL_CONNECTION_LIMIT": "50"
+      }
+    }
+  ]
+}

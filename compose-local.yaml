@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  template-mongodb:
+    image: mongo:latest
+    ports:
+    - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: template-admin
+      MONGO_INITDB_ROOT_PASSWORD: template-admin-pass
+    volumes:
+    - mongo-db-data:/data/db
+    - mongo-config-data:/data/configdb
+  template-mariadb:
+    image: mariadb:latest
+    environment:
+      MARIADB_ROOT_PASSWORD: template-root-pass
+      MARIADB_DATABASE: template-database
+      MARIADB_USER: template-user
+      MARIADB_PASSWORD: template-user-pass
+    ports:
+    - "3306:3306"
+    volumes:
+    - mariadb_data:/var/lib/mysql
+
+volumes:
+  mongo-db-data:
+  mongo-config-data:
+  mariadb_data:
