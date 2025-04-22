@@ -1,7 +1,14 @@
+export const jtwSecretKey = "aFcORoLtWh3u9j!bea%&%DNHc&LTOGU7";
+
 export const requestPermissionMappings = {
+  "ping": 15
 };
 
 export const userRolesPermissions = {
+  ADMIN: 8,
+  SALES: 4,
+  USER_NAMED: 2,
+  USER_UNKNOWN: 1
 };
 
 export function isDev() {

@@ -4,6 +4,7 @@ import http from 'http';
 
 import dataRoutes from './routes/data.js';
 import indexRoutes from './routes/root.js';
+import userRoutes from './routes/user.js';
 import { Logger } from './services/Logger.js';
 import { WebSockets } from './services/WebSockets.js';
 
@@ -45,6 +46,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', indexRoutes);
 app.use('/data', dataRoutes);
+app.use('/user', userRoutes);
 
 // Run the app
 const HOST = '0.0.0.0';
