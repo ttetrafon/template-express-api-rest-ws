@@ -11,7 +11,7 @@
       ],
       "env": {
         "PORT": "3000",
-        "FILES_DB": "mongodb://template-admin:template-admin-pass@localhost://template-mongodb:27017/?authSource=template-admin",
+        "FILES_DB": "mongodb://template-admin:template-admin-pass@localhost://template-mongodb:27017/?authSource=admin",
         "SQL_HOST": "127.0.0.1",
         "SQL_PORT": "3306",
         "SQL_USER": "template-user",

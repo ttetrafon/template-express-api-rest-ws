@@ -15,7 +15,11 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker-up": "docker compose -f compose-local.yaml up --force-recreate --build -d",
+    "docker-down": "docker compose -f compose-local.yaml down",
+    "docker-start": "docker compose -f compose-local.yaml start",
+    "docker-stop": "docker compose -f compose-local.yaml stop"
   },
   "dependencies": {
     "cors": "^2.8.5",
